@@ -9,8 +9,8 @@ class Game(models.Model):
 	image = models.ImageField(upload_to='games/images/', null=False, blank=False)
 	video = models.FileField(upload_to='games/videos/', null=True, blank=True)
 	story = models.TextField(null=True, blank=True)
-	min_requirements = models.ForeignKey('SystemRequirement', on_delete=models.CASCADE, null=True, blank=True)
-	optimal_requirements = models.ForeignKey('SystemRequirement', on_delete=models.CASCADE, null=True, blank=True)
+	min_requirements = models.ForeignKey('SystemRequirement', on_delete=models.CASCADE, related_name='min_req', null=True, blank=True)
+	optimal_requirements = models.ForeignKey('SystemRequirement', on_delete=models.CASCADE, related_name='optimal_req', null=True, blank=True)
 
 	class Meta:
 		verbose_name = 'Гра'
@@ -31,7 +31,7 @@ class Genre(models.Model):
 
 class Developer(models.Model):
 	name = models.CharField(max_length=100, unique=True, null=False)
-	website = models.CharField(null=True, blank=True)
+	website = models.CharField(max_length=255, null=True, blank=True)
 
 	class Meta:
 		verbose_name = 'Розробник'
