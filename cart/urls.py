@@ -4,5 +4,5 @@ from django.conf.urls.static import static
 from . import views
 
 urlpatterns = [
-    path("", views.user, name="cart"),
+    path("", views.cart, name="cart"),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
