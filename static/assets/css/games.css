@@ -1,0 +1,366 @@
+/*
+display: flex;
+flex-direction: column;
+justify-content -> horizontal
+align-items -> vertical
+
+flex-start -> top
+flex-end -> bottom
+center -> center
+space-between -> space between items
+
+flex-direction: row;
+justify-content -> vertical
+align-items -> horizontal
+
+flex-start -> left
+flex-end -> right
+center -> center
+space-between -> space between items
+*/
+
+.main {
+	justify-content: flex-start;
+}
+
+.games {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: flex-start;
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+}
+
+.left-side {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	width: 20%;
+	height: 100%;
+	background-color: #1c1c1c;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+	padding: 40px;
+	color: #d4d4c7;
+	font-size: 24px;
+}
+
+.games-title {
+	margin-left: 500px;
+	margin-bottom: 35px;
+	font-size: 4rem;
+	color: #d4d4c7;
+	transition: 0.3 ease;
+}
+
+.games-title:hover {
+	transition: 0.3 ease;
+	color: #959595;
+}
+
+.sort-options {
+	transition: background-color 0.3 ease;
+}
+
+.sort-label {
+	margin-left: 530px;
+	margin-bottom: 35px;
+	font-size: 2.4rem;
+	color: #d4d4c7;
+}
+
+.sort-select {
+	margin-left: 525px;
+	margin-bottom: 35px;
+	font-size: 1.75rem;
+	width: 150px;
+	height: 60px;
+	line-height: 78px;
+	font-size: 20px;
+	font-family: 'Bebas Neue', sans-serif;
+	color: #000000;
+	letter-spacing: 3px;
+	outline: transparent;
+	position: relative;
+	touch-action: manipulation;
+	border-radius: 7.5%;
+	background-color: #e081ff;
+	box-shadow: 10px 0px 0px #9d53b3;
+}
+
+.filters {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	width: 100%;
+	height: 100%;
+	margin-bottom: 20px;
+}
+
+.filter-group {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	margin-bottom: 20px;
+}
+
+.filter-label {
+	margin-bottom: 10px;
+}
+
+.checkbox-label {
+	font-size: 1.3rem;
+	padding: 0.2rem 0;
+}
+
+.checkbox-wrapper-2 .ikxBAC {
+	appearance: none;
+	background-color: #dfe1e4;
+	border-radius: 72px;
+	border-style: none;
+	flex-shrink: 0;
+	height: 20px;
+	margin: 0;
+	position: relative;
+	width: 30px;
+	margin-right: 10px;
+}
+
+.checkbox-wrapper-2 .ikxBAC::before {
+	bottom: -6px;
+	content: '';
+	left: -6px;
+	position: absolute;
+	right: -6px;
+	top: -6px;
+}
+
+.checkbox-wrapper-2 .ikxBAC,
+.checkbox-wrapper-2 .ikxBAC::after {
+	transition: all 100ms ease-out;
+}
+
+.checkbox-wrapper-2 .ikxBAC::after {
+	background-color: #fff;
+	border-radius: 50%;
+	content: '';
+	height: 14px;
+	left: 3px;
+	position: absolute;
+	top: 3px;
+	width: 14px;
+}
+
+.checkbox-wrapper-2 input[type='checkbox'] {
+	cursor: default;
+}
+
+.checkbox-wrapper-2 .ikxBAC:hover {
+	background-color: #c9cbcd;
+	transition-duration: 0s;
+}
+
+.checkbox-wrapper-2 .ikxBAC:checked {
+	background-color: #6e79d6;
+}
+
+.checkbox-wrapper-2 .ikxBAC:checked::after {
+	background-color: #fff;
+	left: 13px;
+}
+
+.checkbox-wrapper-2 :focus:not(.focus-visible) {
+	outline: 0;
+}
+
+.checkbox-wrapper-2 .ikxBAC:checked:hover {
+	background-color: #535db3;
+}
+
+.price-label {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	width: 100%;
+}
+
+.price-range-wrapper {
+	width: 100%;
+	font-size: 1.3rem;
+}
+
+.filter-range {
+	width: 80%;
+	height: 10px;
+	-webkit-appearance: none;
+	background-color: #bb1af1;
+	color: #d4d4c7;
+	border-radius: 72px;
+	border-style: none;
+	flex-shrink: 0;
+	margin: 0;
+	position: relative;
+
+	&::-webkit-slider-thumb {
+		-webkit-appearance: none;
+		height: 16px;
+		width: 16px;
+		border-radius: 50%;
+		background: #d4d4c7;
+		box-shadow: 1px 1px 2px rgba(#000, 0.5);
+
+		cursor: pointer;
+	}
+}
+
+.button-49,
+.button-49:after {
+	width: 150px;
+	height: 76px;
+	line-height: 78px;
+	font-size: 20px;
+	font-family: 'Bebas Neue', sans-serif;
+	background: linear-gradient(45deg, transparent 5%, #ff013c 5%);
+	border: 0;
+	color: #fff;
+	letter-spacing: 3px;
+	box-shadow: 6px 0px 0px #00e6f6;
+	outline: transparent;
+	position: relative;
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+}
+
+.button-49:after {
+	--slice-0: inset(50% 50% 50% 50%);
+	--slice-1: inset(80% -6px 0 0);
+	--slice-2: inset(50% -6px 30% 0);
+	--slice-3: inset(10% -6px 85% 0);
+	--slice-4: inset(40% -6px 43% 0);
+	--slice-5: inset(80% -6px 5% 0);
+
+	content: 'ALTERNATE TEXT';
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: linear-gradient(
+		45deg,
+		transparent 3%,
+		#00e6f6 3%,
+		#00e6f6 5%,
+		#ff013c 5%
+	);
+	text-shadow: -3px -3px 0px #f8f005, 3px 3px 0px #00e6f6;
+	clip-path: var(--slice-0);
+}
+
+.button-49:hover:after {
+	animation: 1s glitch;
+	animation-timing-function: steps(2, end);
+}
+
+@keyframes glitch {
+	0% {
+		clip-path: var(--slice-1);
+		transform: translate(-20px, -10px);
+	}
+	10% {
+		clip-path: var(--slice-3);
+		transform: translate(10px, 10px);
+	}
+	20% {
+		clip-path: var(--slice-1);
+		transform: translate(-10px, 10px);
+	}
+	30% {
+		clip-path: var(--slice-3);
+		transform: translate(0px, 5px);
+	}
+	40% {
+		clip-path: var(--slice-2);
+		transform: translate(-5px, 0px);
+	}
+	50% {
+		clip-path: var(--slice-3);
+		transform: translate(5px, 0px);
+	}
+	60% {
+		clip-path: var(--slice-4);
+		transform: translate(5px, 10px);
+	}
+	70% {
+		clip-path: var(--slice-2);
+		transform: translate(-10px, 10px);
+	}
+	80% {
+		clip-path: var(--slice-5);
+		transform: translate(20px, -10px);
+	}
+	90% {
+		clip-path: var(--slice-1);
+		transform: translate(-10px, 0px);
+	}
+	100% {
+		clip-path: var(--slice-1);
+		transform: translate(0);
+	}
+}
+
+.right-side {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	width: 80%;
+	height: 100%;
+	padding: 3rem 0;
+}
+
+.games-list {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	gap: 20px;
+	justify-items: center;
+	align-items: center;
+}
+
+.game-card {
+	max-width: 300px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	flex-direction: column;
+	text-decoration: none;
+}
+
+.game-image {
+	width: 300px;
+	height: 400px;
+	object-fit: cover;
+	border-radius: 10px;
+	transition: transform 0.3s ease;
+	z-index: 1;
+}
+
+.game-title {
+	font-size: 1.3rem;
+	color: #d4d4c7;
+	text-align: center;
+	margin-top: 0.7rem;
+	transform: translateY(-150px);
+	transition: transform 0.5s ease;
+}
+
+.game-card:hover .game-description,
+.game-card:hover .game-title {
+	transform: translateY(0);
+}

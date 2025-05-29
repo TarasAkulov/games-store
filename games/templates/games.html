@@ -1,0 +1,192 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}Games World{% endblock %}
+{% block extra_css %}<link rel="stylesheet" href="{% static 'assets/css/games.css' %}">{% endblock %}
+
+{% block welcome-image %}
+{% endblock %}
+
+{% block content %}
+<article class="games">
+				<section class="left-side">
+					<form class="filters">
+						<div class="filter-group">
+							<label for="platform" class="filter-label">Platform</label>
+
+							<label for="platform-pc" class="checkbox-label">
+								<div class="checkbox-wrapper-2">
+									<input
+										type="checkbox"
+										id="platform-pc"
+										class="sc-gJwTLC ikxBAC"
+									/>PC
+								</div>
+							</label>
+
+							<label for="platform-console" class="checkbox-label">
+								<div class="checkbox-wrapper-2">
+									<input
+										type="checkbox"
+										id="platform-console"
+										class="sc-gJwTLC ikxBAC"
+									/>Console
+								</div>
+							</label>
+
+							<label for="platform-mobile" class="checkbox-label">
+								<div class="checkbox-wrapper-2">
+									<input
+										type="checkbox"
+										id="platform-mobile"
+										class="sc-gJwTLC ikxBAC"
+									/>Mobile
+								</div>
+							</label>
+						</div>
+
+						<div class="filter-group">
+							<label for="genre" class="filter-label">Genre</label>
+
+							<label for="genre-action" class="checkbox-label">
+								<div class="checkbox-wrapper-2">
+									<input
+										type="checkbox"
+										id="genre-action"
+										class="sc-gJwTLC ikxBAC"
+									/>Action
+								</div>
+							</label>
+
+							<label for="genre-adventure" class="checkbox-label">
+								<div class="checkbox-wrapper-2">
+									<input
+										type="checkbox"
+										id="genre-adventure"
+										class="sc-gJwTLC ikxBAC"
+									/>Adventure
+								</div>
+							</label>
+
+							<label for="genre-rpg" class="checkbox-label">
+								<div class="checkbox-wrapper-2">
+									<input
+										type="checkbox"
+										id="genre-rpg"
+										class="sc-gJwTLC ikxBAC"
+									/>RPG
+								</div>
+							</label>
+
+							<label for="genre-simulation" class="checkbox-label">
+								<div class="checkbox-wrapper-2">
+									<input
+										type="checkbox"
+										id="genre-simulation"
+										class="sc-gJwTLC ikxBAC"
+									/>Simulation
+								</div>
+							</label>
+
+							<label for="genre-strategy" class="checkbox-label">
+								<div class="checkbox-wrapper-2">
+									<input
+										type="checkbox"
+										id="genre-strategy"
+										class="sc-gJwTLC ikxBAC"
+									/>Strategy
+								</div>
+							</label>
+						</div>
+
+						<div class="filter-group">
+							<label for="price" class="price-label"
+								>Price Range
+								<div class="price-range-wrapper">
+									<span class="price-range-text">0</span>
+									<input
+										type="range"
+										id="price"
+										class="filter-range"
+										min="0"
+										max="100"
+										step="1"
+									/>
+									<span class="price-range-text">50</span>
+								</div>
+							</label>
+						</div>
+
+						<button type="submit" class="button-49">Apply Filters</button>
+					</form>
+				</section>
+
+				<section class="right-side">
+					<h1 class="games-title">Games</h1>
+
+					<div class="sort-options">
+						<label for="sort" class="sort-label">Sort by:</label>
+						<select id="sort" class="sort-select">
+							<option value="popularity">Popularity</option>
+							<option value="rating">Rating</option>
+							<option value="release-date">Release Date</option>
+						</select>
+					</div>
+
+					<div class="games-list">
+						<a class="game-card" href="game.html">
+							<img
+								src="{% static 'assets/images/games/Death-Stranding-2.jpg' %}"
+								class="game-image"
+							/>
+							<span class="game-title">Death Stranding 2</span>
+						</a>
+
+						<a class="game-card" href="game.html">
+							<img src="{% static 'assets/images/games/mgs-delta.jpg' %}" class="game-image" />
+							<span class="game-title">Metal Gear Solid Delta</span>
+						</a>
+
+						<a class="game-card" href="game.html">
+							<img
+								src="{% static 'assets/images/games/Kingdom_Come_-_Deliverance_II.jpg' %}"
+								class="game-image"
+							/>
+							<span class="game-title">Kingdom Come Deliverance II</span>
+						</a>
+
+						<a class="game-card" href="game.html">
+							<img
+								src="{% static 'assets/images/games/Kingdom_Come_-_Deliverance_II.jpg' %}"
+								class="game-image"
+							/>
+							<span class="game-title">Kingdom Come Deliverance II</span>
+						</a>
+
+						<a class="game-card" href="game.html">
+							<img
+								src="{% static 'assets/images/games/Kingdom_Come_-_Deliverance_II.jpg' %}"
+								class="game-image"
+							/>
+							<span class="game-title">Kingdom Come Deliverance II</span>
+						</a>
+
+						<a class="game-card" href="game.html">
+							<img
+								src="{% static 'assets/images/games/Kingdom_Come_-_Deliverance_II.jpg' %}"
+								class="game-image"
+							/>
+							<span class="game-title">Kingdom Come Deliverance II</span>
+						</a>
+
+						<a class="game-card" href="game.html">
+							<img
+								src="{% static 'assets/images/games/Kingdom_Come_-_Deliverance_II.jpg' %}"
+								class="game-image"
+							/>
+							<span class="game-title">Kingdom Come Deliverance II</span>
+						</a>
+					</div>
+				</section>
+			</article>
+{% endblock %}

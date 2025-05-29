@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}Games World{% endblock %}
+{% block extra_css %}<link rel="stylesheet" href="{% static 'assets/css/user.css' %}" />{% endblock %}
+
+{% block content %}
+			<div class="logo-user">
+				<img src="{% static 'assets/images/user.svg' %}" alt="User Icon" />
+			</div>
+
+			<article class="about">
+				<span class="article-title">Your account:</span>
+				<form class="about-form">
+					<label class="about-label"
+						>Username:
+						<input type="text" class="about-name" value="Taras" />
+					</label>
+					<label class="about-label"
+						>Email:
+						<input
+							type="email"
+							class="about-email"
+							value="nubijinger@gmail.net"
+						/>
+					</label>
+					<label class="about-label column"
+						>About you:
+						<textarea class="about-description">
+Hello world! I'm (your username)! This is my account. Nice to meet you!</textarea
+						>
+					</label>
+					<p class="about-data">Join Data: (Your data)</p>
+					<p class="about-balance">Balance: (Your balance)</p>
+
+					<input type="submit" class="submit-button" value="Save" />
+				</form>
+			</article>
+
+			<article class="games">
+				<span class="article-title">Your games:</span>
+	
+				<table class="games-table">
+					<tr class="games-table-row">
+						<th class="games-table-header">Game</th>
+						<th class="games-table-header">Image</th>
+						<th class="games-table-header">Genre</th>
+						<th class="games-table-header">Price</th>
+					</tr>
+	
+					<tr class="games-table-row">
+						<td class="games-table-data"><a href="game.html" class="games-table-link">Death Stranding II</a></td>
+						<td class="games-table-data"><img src="{% static 'assets/images/games/Death-Stranding-2.jpg' %}" alt="Death Stranding II" /></td>
+						<td class="games-table-data">Action</td>
+						<td class="games-table-data">59.99$</td>
+					</tr>
+	
+					<tr class="games-table-row">
+						<td class="games-table-data"><a href="game.html" class="games-table-link">Kingdom Come Deliverance II</a></td>
+						<td class="games-table-data"><img src="{% static 'assets/images/games/Kingdom_Come_-_Deliverance_II.jpg' %}" alt="Kingdom Come Deliverance II" /></td>
+						<td class="games-table-data">RPG</td>
+						<td class="games-table-data">49.99$</td>
+					</tr>
+					
+					<tr class="games-table-row">
+						<td class="games-table-data"><a href="game.html" class="games-table-link">Metal Gear Solid Delta</a></td>
+						<td class="games-table-data"><img src="{% static 'assets/images/games/mgs-delta.jpg' %}" alt="Metal Gear Solid Delta" /></td>
+						<td class="games-table-data">Stealth</td>
+						<td class="games-table-data">39.99$</td>
+					</tr>
+				</table>
+			</article>
+{% endblock %}

@@ -1,0 +1,186 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}Games World{% endblock %}
+{% block extra_css %}<link rel="stylesheet" href="{% static 'assets/css/game.css' %}">{% endblock %}
+
+{% block welcome-image %}
+{% endblock %}
+
+{% block content %}
+    <article class="game-main-data-container">
+            <h1 class="game-name">Death Stranding II</h1>
+            <section class="game-main-data">
+                <video class="game-video" controls autoplay muted>
+                    <source src="{% static 'assets/videos/1.webm' %}" type="video/webm">
+                </video>
+
+                <div class="game-main-info">
+                    <img class="game-img" src="{% static 'assets/images/games/Death-Stranding-2.jpg' %}"/>
+                    <p class="game-short-info">Легендарный творец Хидэо Кодзима представляет окончательную версию DIRECTOR’S CUT знаковой для жанра игры. Действуя от лица Сэма Бриджеса и объединяя последних выживших на территории Америки, вам предстоит возродить надежду человечества.</p>
+                    <p class="game-release-date">15.05.2025</p>
+                    <p class="game-developer">KOJIMA PRODUCTIONS</p>
+                </div>
+            </section>
+        </article>
+
+        <article class="buy-game-container">
+            <section class="buy-option">
+                <span class="game-name">Death Stranding II</span>
+                <span class="seller">Steam</span>
+                <span class="price">50$</span>
+                <a class="buy-btn" href="#"><img src="{% static 'assets/images/buy.svg' %}"/></a>
+            </section>
+            
+            <section class="buy-option">
+                <span class="game-name">Death Stranding II</span>
+                <span class="seller">EA</span>
+                <span class="price">40$</span>
+                <a class="buy-btn" href="#"><img src="{% static 'assets/images/buy.svg' %}"/></a>
+            </section>
+        </article>
+
+        <span class="game-desc-title">Death Stranding 2:</span>
+
+        <article class="game-sub-data-container">
+            On the Beach is an upcoming action-adventure game developed by Kojima Productions and published by Sony Interactive Entertainment. 
+            Directed by Hideo Kojima, the game is set to release exclusively for PlayStation 5 on June 26, 2025. 
+            It serves as a sequel to the original Death Stranding and continues the narrative of Sam Porter Bridges in a post-apocalyptic world.
+        </article>
+
+        <span class="game-story-title">Story and Setting:</span>
+        <span class="game-story-desc-title">
+            Set 11 months after the events of the first game, Death Stranding 2 follows Sam Porter Bridges, portrayed by Norman Reedus, as he embarks on a new mission to reconnect fractured societies.
+            The journey takes Sam from the deserts of Mexico to the diverse landscapes of Australia, including lush forests and wildlife sanctuaries inhabited by kangaroos and koalas. 
+            The rnarrative explores themes of human connection and the consequences of our choices, posing the haunting question: "Should we have connected?"
+        </span>
+
+        <span class="game-story-title">System Characteristics:</span>
+
+        <table class="characteristics-table">
+			<tr>
+                <th></th>
+                <th>Mininal</th>
+                <th>Optimal</th>
+            </tr>
+
+            <tr>
+                <td class="characteristic">OS</td>
+                <td>Windows 10 x64</td>
+                <td>Windows 10 x64</td>
+            </tr>
+
+            <tr>
+                <td class="characteristic">Processor</td>
+                <td>Intel Core i5-3470 or AMD Ryzen 3 1200</td>
+                <td>Intel Core i7-3770 or AMD Ryzen 5 1600</td>
+            </tr>
+
+            <tr>
+                <td class="characteristic">Operation drive</td>
+                <td>8 Gb</td>
+                <th>8 Gb</th>
+            </tr>
+
+            <tr>
+                <td class="characteristic">Videocard</td>
+                <td>GeForce GTX 1060 4 Gb or AMD Radeon Rx 580 4 Gb</td>
+                <td>GeForce GTX 1060 6 Gb or AMD Radeon Rx 590</td>
+            </tr>
+		</table>
+
+        <article class="reviews-container">
+            <span class="type-title">Type your rate here:</span>
+            <form class="rate-form">
+				<label class="rate-label-column"
+					>
+					<textarea class="rate-your">...</textarea
+					>
+				</label>
+
+				<input type="submit" class="submit-button" value="Save" />
+			</form>
+
+
+            <div class="swiper reviews">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="slide-content">
+                            <img src="{% static 'assets/images/user.svg' %}" alt="User Icon" />
+                            <span class="name">Taras</span>
+                            <span class="text">Very cool and well designed game!</span>
+                            <div class="footer-review">
+                                <span class="date">18.05.2025</span>
+                                <span class="score">4.7/5</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="slide-content">
+                            <img src="{% static 'assets/images/user2.jpg' %}" alt="User Icon" />
+                            <span class="name">Mari</span>
+                            <span class="text">Kinda cool, but still needs some detalisation.</span>
+                            <div class="footer-review">
+                                <span class="date">22.05.2025</span>
+                                <span class="score">3.4/5</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="slide-content">
+                        <img src="{% static 'assets/images/user3.jpg' %}" alt="User Icon" />
+                        <span class="name">John</span>
+                        <span class="text">THAT'S FANTASTIC! I definitely recommend this game!</span>
+                        <div class="footer-review">
+                            <span class="date">14.03.2024</span>
+                            <span class="score">5/5</span>
+                        </div>
+                        </div>  
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="slide-content">
+                        <img src="{% static 'assets/images/user4.svg' %}" alt="User Icon" />
+                        <span class="name">George</span>
+                        <span class="text">I didn't like the game.</span>
+                        <div class="footer-review">
+                            <span class="date">30.01.2027</span>
+                            <span class="score">1/5</span>
+                        </div>
+                        </div>  
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="slide-content">
+                        <img src="{% static 'assets/images/user5.jpg' %}" alt="User Icon" />
+                        <span class="name">Sophie</span>
+                        <span class="text">As always super, but i'd like you to add more plot.</span>
+                        <div class="footer-review">
+                            <span class="date">07.11.2023</span>
+                            <span class="score">4/5</span>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".reviews", {
+            slidesPerView: "auto",
+            centeredSlides: true,
+            spaceBetween: 50,
+            pagination: {
+                el: ".swiper-pagination",
+                clicable: true,
+            }
+        });
+    </script>
+{% endblock %}

@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static 'assets/images/icon.svg' %}" type="image/png">
+    <script src="https://kit.fontawesome.com/750b961b10.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    {% block extra_css %}{% endblock %}
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    {% block welcome-image %}{% endblock %}
+
+    <header class="header">
+
+        <a class="logo" href="index.html">
+            <img src="{% static 'assets/images/icon.svg' %}" class="logo-image">
+            <span class="logo-text">Games World</span>
+        </a>
+
+        <nav class="nav">
+            <a class="nav-a" href="index.html">Home</a>
+            <a class="nav-a" href="games.html">Games</a>
+            <a class="nav-a" href="#about">About</a>
+            <a class="nav-a" href="#contact">Contact</a>
+        </nav>
+
+        <div class="search-bar">
+            <input type="text" class="search-input" placeholder="Search games...">
+            <button class="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+
+        <div class="user-actions">
+            <a class="user-action" href="user.html"><i class="fa-regular fa-user"></i></a>
+            <a class="user-action" href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+        </div>
+
+    </header>
+
+    <main class="main">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="{% static 'assets/images/icon.svg' %}" 
+                class="footer-logo-image">
+                <span class="logo-text">Games World</span>
+            </div>
+            <div class="footer-info">
+                <span class="footer-info-text">© 2025 Games World. All rights deserved</span>
+                <div class="footer-links">
+                    <a class="footer-link" href="#">GitHub
+    
+                    </a>
+                    <a class="footer-link" href="#">Telegram
+    
+                    </a>
+                    <a class="footer-link" href="#">TikTok
+    
+                    </a>
+                    <a class="footer-link" href="#">Youtube
+    
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

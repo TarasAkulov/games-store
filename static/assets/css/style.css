@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #1e1e1e;
+    font-family: "Space Grotesk", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.header {
+    background-color: #151515;
+    color: #d4d4c7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    max-height: 12vh;
+    height: 12vh;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #d4d4c7;
+    font-size: 40px;
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.logo:hover {
+    background-color: #292929;
+    color: #d2d2c6;
+}
+
+.logo-image {
+    width: 50px;
+    margin-right: 5px;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #d4d4c7;
+    font-size: 25px;
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+}
+
+.nav-a {
+    text-underline-position: below;
+    text-decoration: none;
+    margin-right: 10px;
+    color: #d4d4c7;
+    transition: 0.3s ease;
+}
+
+.nav-a:hover {
+    color: #d4d4c77c;
+    transform: scale(1.05);
+}
+
+.search-bar {
+    display: flex;
+    gap: 10px;
+}
+
+.search-input {
+    padding: 10px;
+    font-size: 16px;
+    width: 450px;
+    border-radius: 10px;
+    border: 1px solid #1d1d1d;
+    background-color: #292929;
+    color: #d4d4c7;
+}
+
+.search-input::placeholder {
+    color: #d4d4c7;
+    opacity: 0.7;
+}
+
+.search-input:focus {
+    outline: none;
+    border: 1px solid #2f2f2f;
+}
+
+.search-button {
+    background: transparent;
+    color: #d4d4c7;
+    border: none;
+    padding: 10px 0px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.3s ease;
+    transform: translateX(-40px);
+}
+
+.search-button:hover {
+    transform: scale(1.05) translateX(-40px);
+}
+
+.add-button {
+    background: transparent;
+    color: #d4d4c7;
+    border: none;
+    padding: 10px 0px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.3s ease;
+    transform: translateX(-40px);
+}
+
+.add-button:hover {
+    transform: scale(1.05) translateX(-40px);
+}
+
+.user-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-right: 2rem;
+}
+
+.user-action {
+    font-size: 25px;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    transition: 0.3s ease;
+    text-decoration: none;
+    color: #d4d4c7;
+}
+
+.user-action:hover {
+    background-color: #292929;
+    color: #d2d2c6;
+    transform: scale(1.05);
+}
+
+.main {
+    min-height: 82vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.footer {
+    background-color: #151515;
+    color: #d4d4c7;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
+    max-height: 10vh;
+    height: 10vh;
+    margin-top: 3rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 80%;
+    margin: 0 auto;
+    gap: 0.5rem;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #d4d4c7;
+    font-size: 28px;
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+}
+
+.footer-logo-image {
+    width: 35px;
+    margin-right: 5px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+
+.footer-link {
+    text-decoration: none;
+    color: #ffffef;
+    transition: color 0.3s ease;
+    border-right: 1px solid #d4d4c7;
+    padding-right: 10px;
+}
+
+.footer-link:last-child {
+    border-right: none;
+    padding-right: 0;
+}

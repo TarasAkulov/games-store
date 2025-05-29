@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block extra_css %}<link rel="stylesheet" href="{% static 'assets/css/index.css' %}">{% endblock %}
+{% block title %}Games World{% endblock %}
+
+{% block welcome-image %}
+<div class="welcome-image"></div>
+{% endblock %}
+
+{% block content %}
+<article class="new-games">
+        <span class="new-games-title">New Games</span>
+
+        <section class="new-games-section">
+            <a class="new-game-card">
+                <img src="{% static 'assets/images/games/Death-Stranding-2.jpg' %}" class="new-game-image">
+                <span class="new-game-title">Death Stranding 2</span>
+                <span class="new-game-description">The sequel to the critically acclaimed game.</span>
+            </a>
+
+            <a class="new-game-card">
+                <img src="{% static 'assets/images/games/Kingdom_Come_-_Deliverance_II.jpg' %}" class="new-game-image">
+                <span class="new-game-title">Kingdom Come: Deliverance II</span>
+                <span class="new-game-description">The sequel to the award-winning RPG.</span>
+            </a>
+                                    
+            <a class="new-game-card">
+                <img src="{% static 'assets/images/games/mgs-delta.jpg' %}" class="new-game-image">
+                <span class="new-game-title">Metal Gear Solid Delta</span>
+                <span class="new-game-description">A remake of the classic stealth game.</span>
+            </a>
+    </section>
+</article>
+
+<article class="about" id="about">
+    <span class="article-title">About Us</span>
+    <section class="about-text">
+        <p class="about-description">Welcome to Games World, your ultimate destination for all things gaming! 
+            We are passionate about bringing you the latest news, reviews, and insights from the gaming world.
+            Whether you're a casual gamer or a hardcore enthusiast, we have something for everyone.</p>
+        <p class="about-description">Join us as we explore the vast universe of video games, from indie gems to blockbuster titles.
+            Our team of dedicated writers and gamers work tirelessly to provide you with the most accurate and up-to-date information. 
+            Thank you for being a part of our community!</p>
+    </section>
+</article>
+{% endblock %}

@@ -1,0 +1,94 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}Games World{% endblock %}
+{% block extra_css %}<link rel="stylesheet" href="{% static 'assets/css/cart.css' %}" />{% endblock %}
+
+{% block content %}
+        <div class="logo-user">
+            <img src="{% static 'assets/images/cart.svg' %}" alt="User Icon" />
+        </div>
+
+        <article class="about">
+            <span class="article-title">Buy saved games:</span>
+            <section class="saved-text">
+                <p class="saved-games">You haven't got any saved games yet.</p>
+            </section>
+        </article>
+
+        <div class="search-bar">
+            <input type="text" class="search-input" placeholder="Add more games..." />
+            <button class="search-button">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </div>
+
+        <input type="add" class="add-button" value="Add" />
+
+        <article class="games">
+            <span class="article-title">Your games:</span>
+
+            <table class="games-table">
+                <tr class="games-table-row">
+                    <th class="games-table-header">Game</th>
+                    <th class="games-table-header">Image</th>
+                    <th class="games-table-header">Genre</th>
+                    <th class="games-table-header">Price</th>
+                    <th class="games-table-header">Count</th>
+                    <th class="games-table-header">Total</th>
+                    <th class="games-table-header">Action</th>
+                </tr>
+
+                <tr class="games-table-row">
+                    <td class="games-table-data"><a href="game.html" class="games-table-link">Death Stranding II</a></td>
+                    <td class="games-table-data"><img src="{% static 'assets/images/games/Death-Stranding-2.jpg' %}" alt="Death Stranding II" /></td>
+                    <td class="games-table-data">Action</td>
+                    <td class="games-table-data">59.99$</td>
+                    
+                    <td class="games-table-data" style="text-align: center;">
+                        <a href="minus" class="minus-btn">-</a>
+                        1
+                        <a href="add" class="add-btn">+</a>
+                    </td>
+                    <td class="games-table-data">59.99$</td>
+                    <td class="games-table-data">
+                        <a href="remove" class="remove-game">Remove</a>
+                    </td>
+                </tr>
+
+                <tr class="games-table-row">
+                    <td class="games-table-data"><a href="game.html" class="games-table-link">Kingdom Come Deliverance II</a></td>
+                    <td class="games-table-data"><img src="{% static 'assets/images/games/Kingdom_Come_-_Deliverance_II.jpg' %}" alt="Kingdom Come Deliverance II" /></td>
+                    <td class="games-table-data">RPG</td>
+                    <td class="games-table-data">49.99$</td>
+
+                    <td class="games-table-data" style="text-align: center;">
+                        <a href="minus" class="minus-btn">-</a>
+                        1
+                        <a href="add" class="add-btn">+</a>
+                    </td>
+                    <td class="games-table-data">59.99$</td>
+                    <td class="games-table-data">
+                        <a href="remove" class="remove-game">Remove</a>
+                    </td>
+                </tr>
+                
+                <tr class="games-table-row">
+                    <td class="games-table-data"><a href="game.html" class="games-table-link">Metal Gear Solid Delta</a></td>
+                    <td class="games-table-data"><img src="{% static 'assets/images/games/mgs-delta.jpg' %}" alt="Metal Gear Solid Delta" /></td>
+                    <td class="games-table-data">Stealth</td>
+                    <td class="games-table-data">39.99$</td>
+                    
+                    <td class="games-table-data" style="text-align: center;">
+                        <a href="minus" class="minus-btn">-</a>
+                        1
+                        <a href="add" class="add-btn">+</a>
+                    </td>
+                    <td class="games-table-data">59.99$</td>
+                    <td class="games-table-data">
+                        <a href="remove" class="remove-game">Remove</a>
+                    </td>
+                </tr>
+            </table>
+        </article>
+{% endblock %}

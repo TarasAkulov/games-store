@@ -1,0 +1,131 @@
+.logo-user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.logo-user img {
+    width: 200px;
+    height: 200px;
+}
+
+.article-title {
+    font-size: 4rem;
+    color: #d4d4c7;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3 ease;
+}
+
+.article-title:hover {
+    transition: 0.3 ease;
+    transform: scale(1.05);
+    color: #d2d2c6;
+}
+
+.saved-text {
+    color: #d4d4c7;
+}
+
+.saved-games {
+    font-size: 2rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s ease;
+}
+
+.saved-games:hover {
+    transform: scale(1.05);
+    color: #d2d2c6;
+}
+
+.add-button {
+    background-color: #292929;
+    color: #d4d4c7;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    font-size: 2.5rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin-top: 2rem;
+    margin-left: 3rem;
+}
+
+.add-button:hover {
+    background-color: #d4d4c7;
+    color: #292929;
+    transform: scale(1.05);
+}
+
+.games-table {
+    width: 100%;
+    margin: 0 auto;
+    color: #d4d4c7;
+    font-size: 2rem;
+    border-collapse: collapse;
+    margin-top: 2rem;
+}
+
+.games-table-header, .games-table-data {
+    border: 1px solid #d4d4c7;
+    padding: 1rem;
+}
+
+.games-table-data img {
+    width: 6rem;
+    height: 8rem;
+    object-fit: cover;
+}
+
+.games-table-link {
+    text-decoration: none;
+    color: #d4d4c7;
+}
+
+.th-center {
+    text-align: center;
+}
+
+.minus-btn, .add-btn {
+    text-decoration: none;
+    color: #1c1c1b;
+    border-radius: 0.5 rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+}
+
+.add-btn {
+    background-color: rgb(165, 255, 165);
+}
+
+.minus-btn {
+    background-color: rgb(255, 112, 112);
+}
+
+.remove-game {
+    background-color: #d4d4c7;
+    color: #1c1c1b;
+    text-decoration: none;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    transition: 0.3s ease;
+}
+.remove-game:hover {
+    background-color: #1c1c1b;
+    color: #d4d4c7;
+    transform: scale(1.05);
+}
