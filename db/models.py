@@ -6,8 +6,8 @@ class Game(models.Model):
 	description = models.TextField(null=True, blank=True)
 	release_date = models.DateField(null=True, blank=True)
 	developer = models.ForeignKey('Developer', on_delete=models.CASCADE, null=False)
-	image = models.ImageField(upload_to='games/images/', null=False, blank=False)
-	video = models.FileField(upload_to='games/videos/', null=True, blank=True)
+	image = models.ImageField(upload_to='assets/games/images/', null=False, blank=False)
+	video = models.FileField(upload_to='assets/games/videos/', null=True, blank=True)
 	story = models.TextField(null=True, blank=True)
 	min_requirements = models.ForeignKey('SystemRequirement', on_delete=models.CASCADE, related_name='min_req', null=True, blank=True)
 	optimal_requirements = models.ForeignKey('SystemRequirement', on_delete=models.CASCADE, related_name='optimal_req', null=True, blank=True)
@@ -82,7 +82,7 @@ class User(models.Model):
 	username = models.CharField(max_length=50, unique=True, null=False)
 	email = models.EmailField(unique=True, null=False)
 	password = models.CharField(max_length=128, null=False)
-	image = models.ImageField(upload_to='users/images/', null=True, blank=True)
+	image = models.ImageField(upload_to='assets/users/images/', null=True, blank=True)
 	created_at = models.DateTimeField(auto_now_add=True)
 
 	class Meta:

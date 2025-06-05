@@ -1,5 +1,9 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from db.models import Game
 
 def index(request):
-    return render(request, 'index.html')
+    games = Game.objects.all()[:3]
+    context = {
+        'games': games
+    }
+    return render(request, 'index.html', context)

@@ -13,23 +13,13 @@
         <span class="new-games-title">New Games</span>
 
         <section class="new-games-section">
+            {% for game in games %}
             <a class="new-game-card">
-                <img src="{% static 'assets/images/games/Death-Stranding-2.jpg' %}" class="new-game-image">
-                <span class="new-game-title">Death Stranding 2</span>
-                <span class="new-game-description">The sequel to the critically acclaimed game.</span>
+                <img src="{{ game.image.url }}" class="new-game-image">
+                <span class="new-game-title">{{ game.title }}</span>
+                <span class="new-game-description"></span>
             </a>
-
-            <a class="new-game-card">
-                <img src="{% static 'assets/images/games/Kingdom_Come_-_Deliverance_II.jpg' %}" class="new-game-image">
-                <span class="new-game-title">Kingdom Come: Deliverance II</span>
-                <span class="new-game-description">The sequel to the award-winning RPG.</span>
-            </a>
-                                    
-            <a class="new-game-card">
-                <img src="{% static 'assets/images/games/mgs-delta.jpg' %}" class="new-game-image">
-                <span class="new-game-title">Metal Gear Solid Delta</span>
-                <span class="new-game-description">A remake of the classic stealth game.</span>
-            </a>
+            {% endfor %}
     </section>
 </article>
 
