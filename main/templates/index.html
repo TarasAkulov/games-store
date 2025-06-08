@@ -1,37 +1,49 @@
-{% extends "layout.html" %}
-{% load static %}
+{% extends "layout.html" %} 
+{% load static %} 
 
-{% block extra_css %}<link rel="stylesheet" href="{% static 'assets/css/index.css' %}">{% endblock %}
-{% block title %}Games World{% endblock %}
+{% block extra_css %}
+<link
+	rel="stylesheet"
+	href="{% static 'assets/css/index.css' %}"
+/>
+{% endblock %} 
+
+{% block title %}Games World{% endblock %} 
 
 {% block welcome-image %}
 <div class="welcome-image"></div>
-{% endblock %}
+{% endblock %} 
 
 {% block content %}
 <article class="new-games">
-        <span class="new-games-title">New Games</span>
+	<span class="new-games-title">New Games</span>
 
-        <section class="new-games-section">
-            {% for game in games %}
-            <a class="new-game-card">
-                <img src="{{ game.image.url }}" class="new-game-image">
-                <span class="new-game-title">{{ game.title }}</span>
-                <span class="new-game-description"></span>
-            </a>
-            {% endfor %}
-    </section>
+	<section class="new-games-section">
+		{% for game in games %}
+		<a class="new-game-card">
+			<img src="{{ game.image.url }}" class="new-game-image" />
+			<span class="new-game-title">{{ game.title }}</span>
+			<span class="new-game-description"></span>
+		</a>
+		{% endfor %}
+	</section>
 </article>
 
 <article class="about" id="about">
-    <span class="article-title">About Us</span>
-    <section class="about-text">
-        <p class="about-description">Welcome to Games World, your ultimate destination for all things gaming! 
-            We are passionate about bringing you the latest news, reviews, and insights from the gaming world.
-            Whether you're a casual gamer or a hardcore enthusiast, we have something for everyone.</p>
-        <p class="about-description">Join us as we explore the vast universe of video games, from indie gems to blockbuster titles.
-            Our team of dedicated writers and gamers work tirelessly to provide you with the most accurate and up-to-date information. 
-            Thank you for being a part of our community!</p>
-    </section>
+	<span class="article-title">About Us</span>
+	<section class="about-text">
+		<p class="about-description">
+			Welcome to Games World, your ultimate destination for all things gaming!
+			We are passionate about bringing you the latest news, reviews, and
+			insights from the gaming world. Whether you're a casual gamer or a
+			hardcore enthusiast, we have something for everyone.
+		</p>
+		<p class="about-description">
+			Join us as we explore the vast universe of video games, from indie gems to
+			blockbuster titles. Our team of dedicated writers and gamers work
+			tirelessly to provide you with the most accurate and up-to-date
+			information. Thank you for being a part of our community!
+		</p>
+	</section>
 </article>
 {% endblock %}
