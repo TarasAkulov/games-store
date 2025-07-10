@@ -10,93 +10,40 @@
 {% block content %}
 <article class="games">
 				<section class="left-side">
-					<form class="filters">
+					<form class="filters" method="post" action="{% url 'games' %}">
+
+						{% csrf_token %}
+
 						<div class="filter-group">
-							<label for="platform" class="filter-label">Platform</label>
-
-							<label for="platform-pc" class="checkbox-label">
+							{% for platform in platforms %}
+							<label for="{{ platform }}" class="checkbox-label">
 								<div class="checkbox-wrapper-2">
 									<input
 										type="checkbox"
-										id="platform-pc"
+										id="{{ platform }}"
+										name = "platforms[]"
+										value="{{ platform }}"
 										class="sc-gJwTLC ikxBAC"
-									/>PC
+									/>{{platform}}
 								</div>
 							</label>
-
-							<label for="platform-console" class="checkbox-label">
-								<div class="checkbox-wrapper-2">
-									<input
-										type="checkbox"
-										id="platform-console"
-										class="sc-gJwTLC ikxBAC"
-									/>Console
-								</div>
-							</label>
-
-							<label for="platform-mobile" class="checkbox-label">
-								<div class="checkbox-wrapper-2">
-									<input
-										type="checkbox"
-										id="platform-mobile"
-										class="sc-gJwTLC ikxBAC"
-									/>Mobile
-								</div>
-							</label>
+							{% endfor %}
 						</div>
 
 						<div class="filter-group">
-							<label for="genre" class="filter-label">Genre</label>
-
-							<label for="genre-action" class="checkbox-label">
+							{% for genre in genres %}
+							<label for="{{ genre.name }}" class="checkbox-label">
 								<div class="checkbox-wrapper-2">
 									<input
 										type="checkbox"
-										id="genre-action"
+										id="{{ genre.name }}"
+										name = "genres[]"
+										value="{{ genre.name }}"
 										class="sc-gJwTLC ikxBAC"
-									/>Action
+									/>{{ genre.name }}
 								</div>
 							</label>
-
-							<label for="genre-adventure" class="checkbox-label">
-								<div class="checkbox-wrapper-2">
-									<input
-										type="checkbox"
-										id="genre-adventure"
-										class="sc-gJwTLC ikxBAC"
-									/>Adventure
-								</div>
-							</label>
-
-							<label for="genre-rpg" class="checkbox-label">
-								<div class="checkbox-wrapper-2">
-									<input
-										type="checkbox"
-										id="genre-rpg"
-										class="sc-gJwTLC ikxBAC"
-									/>RPG
-								</div>
-							</label>
-
-							<label for="genre-simulation" class="checkbox-label">
-								<div class="checkbox-wrapper-2">
-									<input
-										type="checkbox"
-										id="genre-simulation"
-										class="sc-gJwTLC ikxBAC"
-									/>Simulation
-								</div>
-							</label>
-
-							<label for="genre-strategy" class="checkbox-label">
-								<div class="checkbox-wrapper-2">
-									<input
-										type="checkbox"
-										id="genre-strategy"
-										class="sc-gJwTLC ikxBAC"
-									/>Strategy
-								</div>
-							</label>
+							{% endfor %}
 						</div>
 
 						<div class="filter-group">
@@ -134,58 +81,15 @@
 					</div>
 
 					<div class="games-list">
-						<a class="game-card" href="game.html">
+						{% for game in games %}
+						<a class="game-card" href="	{% url 'game_detail' game.id %}">
 							<img
-								src="{% static 'assets/images/games/Death-Stranding-2.jpg' %}"
+								src="{{game.image.url}}"
 								class="game-image"
 							/>
-							<span class="game-title">Death Stranding 2</span>
+							<span class="game-title">{{game.title}}</span>
 						</a>
-
-						<a class="game-card" href="game.html">
-							<img src="{% static 'assets/images/games/mgs-delta.jpg' %}" class="game-image" />
-							<span class="game-title">Metal Gear Solid Delta</span>
-						</a>
-
-						<a class="game-card" href="game.html">
-							<img
-								src="{% static 'assets/images/games/Kingdom_Come_-_Deliverance_II.jpg' %}"
-								class="game-image"
-							/>
-							<span class="game-title">Kingdom Come Deliverance II</span>
-						</a>
-
-						<a class="game-card" href="game.html">
-							<img
-								src="{% static 'assets/images/games/Kingdom_Come_-_Deliverance_II.jpg' %}"
-								class="game-image"
-							/>
-							<span class="game-title">Kingdom Come Deliverance II</span>
-						</a>
-
-						<a class="game-card" href="game.html">
-							<img
-								src="{% static 'assets/images/games/Kingdom_Come_-_Deliverance_II.jpg' %}"
-								class="game-image"
-							/>
-							<span class="game-title">Kingdom Come Deliverance II</span>
-						</a>
-
-						<a class="game-card" href="game.html">
-							<img
-								src="{% static 'assets/images/games/Kingdom_Come_-_Deliverance_II.jpg' %}"
-								class="game-image"
-							/>
-							<span class="game-title">Kingdom Come Deliverance II</span>
-						</a>
-
-						<a class="game-card" href="game.html">
-							<img
-								src="{% static 'assets/images/games/Kingdom_Come_-_Deliverance_II.jpg' %}"
-								class="game-image"
-							/>
-							<span class="game-title">Kingdom Come Deliverance II</span>
-						</a>
+						{% endfor %}
 					</div>
 				</section>
 			</article>

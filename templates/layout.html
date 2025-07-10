@@ -28,10 +28,11 @@
             <a class="nav-a" href="#contact">Contact</a>
         </nav>
 
-        <div class="search-bar">
-            <input type="text" class="search-input" placeholder="Search games...">
-            <button class="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
-        </div>
+
+        <form method="get" action="">
+            <input class="search-input" type="text" name="search" placeholder="Search games..." value="{{ search_query }}">
+            <button class="search-button" type="submit">Search</button>
+        </form>
 
         <div class="user-actions">
             <a class="user-action" href="user.html"><i class="fa-regular fa-user"></i></a>

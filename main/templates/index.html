@@ -20,7 +20,8 @@
 
 	<section class="new-games-section">
 		{% for game in games %}
-		<a class="new-game-card">
+
+		<a class="new-game-card" href="{% url 'game_detail' game.id %}">
 			<img src="{{ game.image.url }}" class="new-game-image" />
 			<span class="new-game-title">{{ game.title }}</span>
 			<span class="new-game-description"></span>
