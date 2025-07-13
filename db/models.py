@@ -11,6 +11,11 @@ class Game(models.Model):
 	story = models.TextField(null=True, blank=True)
 	min_requirements = models.ForeignKey('SystemRequirement', on_delete=models.CASCADE, related_name='min_req', null=True, blank=True)
 	optimal_requirements = models.ForeignKey('SystemRequirement', on_delete=models.CASCADE, related_name='optimal_req', null=True, blank=True)
+	sell_count = models.PositiveIntegerField(default=0, null=False)
+	avg_rating = models.DecimalField(max_digits=3, decimal_places=2, default=0.00, null=False)
+	min_price = models.PositiveIntegerField(default=0, null=False)
+	middle_price = models.PositiveIntegerField(default=50, null=False)
+	max_price = models.PositiveIntegerField(default=100, null=False)
 
 	class Meta:
 		verbose_name = 'Гра'

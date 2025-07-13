@@ -8,14 +8,48 @@ PLATFORMS = {
     "Console": ["Xbox", "Playstation"],
 }
 
-def games(request):
+def search(request):
     genres = Genre.objects.all()
     search_query = request.GET.get("search", "")
+    if search_query:
+        games = Game.objects.filter(title__icontains=search_query)
+    else:
+        games = Game.objects.none()
+
+    return render(request, "games.html", {"platforms": PLATFORMS.keys(), "genres": genres, "games": games})
+
+def sort_by(request):
+    genres = Genre.objects.all()
+    games = Game.objects.all()
+    sort_by = request.GET.get("sort_by", "popularity")
+    if sort_by == "popularity":
+        games = Game.objects.all().order_by("-sell_count")
+    elif sort_by == "rating":
+        games = Game.objects.all().order_by("-avg_rating")
+    elif sort_by == "release-date":
+        games = Game.objects.all().order_by("-release_date")
+
+    return render(request, "games.html", {"platforms": PLATFORMS.keys(), "genres": genres, "games": games})
+
+def sort_by_scroll(request):
+    genres = Genre.objects.all()
+    games = Game.objects.all()
+
+    sort_by_scroll = request.GET.get("sort_by_scroll")
+    if sort_by_scroll >= "min_price":
+        games = Game.objects.all().order_by("-min_price")
+    elif sort_by_scroll > "min_price" and sort_by_scroll < "max_price":
+        games = Game.objects.all().order_by("-middle_price")
+    elif sort_by_scroll == "max_price":
+        games = Game.objects.all().order_by("-max_price")
+
+    return render(request, "games.html", {"platforms": PLATFORMS.keys(), "genres": genres, "games": games})
+
+def games(request):
+    genres = Genre.objects.all()
 
     if request.method == "GET":
         games = Game.objects.all()
-        if search_query:
-            games = games.filter(title__icontains=search_query)
         return render(request, "games.html", {"platforms": PLATFORMS.keys(), "genres": genres, "games": games})
     
     elif request.method == "POST":
@@ -28,7 +62,7 @@ def games(request):
         system_req_query = Q()
         for name in selected_platforms_names:
             for system in PLATFORMS[name]:
-                system_req_query |= Q(os__iexact=system)
+                system_req_query |= Q(os__icontains=system)
         system_requierments = SystemRequirement.objects.filter(system_req_query)
 
         games = Game.objects.all()
@@ -37,7 +71,7 @@ def games(request):
             games = games.filter(genre__in=filtered_genres)
         
         if selected_platforms_names:
-            games = games.filter(optimal_requierments=system_requierments).distinct()
+            games = games.filter(optimal_requirements__in=system_requierments).distinct()
 
         if search_query:
             games = games.filter(name__icontains=search_query).distinct()

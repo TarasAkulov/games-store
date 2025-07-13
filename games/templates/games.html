@@ -46,23 +46,27 @@
 							{% endfor %}
 						</div>
 
+					<form method="get" action ="{% url 'sort_by_scroll' %}">
 						<div class="filter-group">
-							<label for="price" class="price-label"
+							<label for="{{ price }}" class="price-label"
 								>Price Range
 								<div class="price-range-wrapper">
 									<span class="price-range-text">0</span>
 									<input
 										type="range"
-										id="price"
+										id="{{ price }}"
 										class="filter-range"
-										min="0"
-										max="100"
+										min="{{ min_price }}"
+										max="{{ max_price }}"
+										value="{{ request.GET.max_price }}"
+										onchange="document.getElementById('price').innerText = this.form.submit()"
 										step="1"
-									/>
+									/>{{ request.GET.max_price }}
 									<span class="price-range-text">50</span>
 								</div>
 							</label>
 						</div>
+					</form>
 
 						<button type="submit" class="button-49">Apply Filters</button>
 					</form>
@@ -71,14 +75,16 @@
 				<section class="right-side">
 					<h1 class="games-title">Games</h1>
 
-					<div class="sort-options">
-						<label for="sort" class="sort-label">Sort by:</label>
-						<select id="sort" class="sort-select">
-							<option value="popularity">Popularity</option>
-							<option value="rating">Rating</option>
-							<option value="release-date">Release Date</option>
-						</select>
-					</div>
+					<form method="get" action="{% url 'sort_by' %}">
+						<div class="sort-options">
+							<label for="sort" class="sort-label">Sort by:</label>
+							<select id="sort" class="sort-select" name="sort_by" onchange="this.form.submit()">
+								<option value="popularity">Popularity</option>
+								<option value="rating">Rating</option>
+								<option value="release-date">Release Date</option>
+							</select>
+						</div>
+					</form>
 
 					<div class="games-list">
 						{% for game in games %}

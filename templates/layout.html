@@ -29,9 +29,9 @@
         </nav>
 
 
-        <form method="get" action="">
+        <form method="get" action="{% url 'search' %}">
             <input class="search-input" type="text" name="search" placeholder="Search games..." value="{{ search_query }}">
-            <button class="search-button" type="submit">Search</button>
+            <button class="search-button" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
         </form>
 
         <div class="user-actions">
